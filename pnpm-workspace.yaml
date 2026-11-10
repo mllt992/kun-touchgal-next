@@ -29,7 +29,7 @@ overrides:
   jws: '3.2.3'
   dompurify: '>=3.4.16'
   tar: '>=7.5.21'
-  undici: '>=8.12.1 <9'
+  undici: '>=8.12.3 <9'
   form-data: '>=4.0.6'
   valibot: '>=1.4.2'
   sharp: '>=0.35.5'
@@ -130,5 +130,5 @@ allowBuilds:
 patchedDependencies:
   '@heroui/tabs@2.2.20': patches/@heroui__tabs@2.2.20.patch
   '@react-aria/i18n@3.12.10': patches/@react-aria__i18n@3.12.10.patch
-  cap-widget@0.1.58: patches/cap-widget@0.1.58.patch
+  cap-widget@0.1.61: patches/cap-widget@0.1.61.patch
   next@16.4.5: patches/next@16.4.5.patch
