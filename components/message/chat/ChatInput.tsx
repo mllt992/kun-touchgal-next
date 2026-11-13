@@ -68,6 +68,8 @@ export const ChatInput = ({ conversationId, onMessageSent }: Props) => {
         }, 0)
       } else {
         e.preventDefault()
+        // 输入法选字的回车不算发送, Safari 只能靠 keyCode 229 识别
+        if (e.nativeEvent.isComposing || e.keyCode === 229) return
         handleSend()
       }
     }

@@ -198,6 +198,11 @@ export const SearchInput = ({
     }
 
     if (event.key === 'Enter') {
+      // Safari 先送达 compositionend 再送达确认候选的回车, 此时 isComposing
+      // 已复位, 只能靠 keyCode 229 识别
+      if (event.keyCode === 229) {
+        return
+      }
       const mode = event.shiftKey ? 'exclude' : 'include'
       if (suggestionNavRef.current?.activate(mode)) {
         event.preventDefault()

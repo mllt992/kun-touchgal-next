@@ -40,6 +40,8 @@ export const AliasManager = ({
           isInvalid={!!errors}
           errorMessage={errors}
           onKeyDown={(event) => {
+            // 输入法选字的回车不算提交, Safari 只能靠 keyCode 229 识别
+            if (event.nativeEvent.isComposing || event.keyCode === 229) return
             if (event.key === 'Enter') handleAddAlias()
           }}
         />

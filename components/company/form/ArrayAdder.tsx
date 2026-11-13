@@ -36,6 +36,8 @@ export const ArrayAdder: FC<ArrayAdderProps> = ({
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
               e.preventDefault()
+              // 输入法选字的回车不算提交, Safari 只能靠 keyCode 229 识别
+              if (e.nativeEvent.isComposing || e.keyCode === 229) return
               addItem()
             }
           }}

@@ -33,6 +33,8 @@ export const SearchTags = ({
           </Button>
         }
         onKeyDown={(e) => {
+          // 输入法选字的回车不算提交, Safari 只能靠 keyCode 229 识别
+          if (e.nativeEvent.isComposing || e.keyCode === 229) return
           if (e.key === 'Enter') handleSearch()
         }}
       />
